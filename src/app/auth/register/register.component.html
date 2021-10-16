@@ -1,0 +1,42 @@
+<!-- <p>login works!</p> -->
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25">
+    <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="registerForm" (ngSubmit)="submitRegistration()">
+      <mat-toolbar color="primary">Register Page</mat-toolbar>
+      <mat-form-field>
+        <mat-label>Fullname</mat-label>
+        <input matInput placeholder="Fullname" formControlName="name">
+        <p *ngIf="getControlValidation('name')" class="error">Fullname is required</p>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" formControlName="username">
+        <p *ngIf="getControlValidation('username')" class="error">Usernameis required</p>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type='password' placeholder="Password" formControlName="password">
+        <p *ngIf="getControlValidation('password')" class="error">Password with minimum of 8 characters is required</p>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type='password' placeholder="Confirm Password" formControlName="confirmPassword">
+        <p *ngIf="getControlValidation('confirmPassword')" class="error">Confirm Password with minimum of 8 characters is required</p>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Email" formControlName="email">
+        <p *ngIf="getControlValidation('email')" class="error">Email is required</p>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" [disabled]="!registerForm.valid">Save</button>
+      <br />
+      <a mat-stroked-button color routerLink='/auth/login' routerLinkActive="active">Already Register? Login</a>
+    </form>
+
+  </mat-card>
+</div>

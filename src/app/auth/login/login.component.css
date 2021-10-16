@@ -5,3 +5,7 @@
 .login-form{
 	padding : 0px;
 }
+
+.login-error {
+  color: red;
+}

@@ -1,0 +1,10 @@
+<section name="product detail">
+ <div>
+   <div>{{productDetail.title}}</div>
+   <div>{{productDetail.description}}</div>
+   <div>{{productDetail.price}}</div>
+ </div>
+ <button type="button" (click)="addToCart()">Add to Cart</button>
+ <br/>
+ <button [routerLink]="['/products']">Back</button>
+</section>
